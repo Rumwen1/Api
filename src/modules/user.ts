@@ -6,7 +6,7 @@
 export default class User {
 
     name = "";
-    email = "";
+    email = ""; 
     pwd = "";
     private _isVerified = false;
     private _lastLogin = "";
@@ -43,6 +43,16 @@ export default class User {
             email: this.email,
             password: "****",
             isVerified: this.isVerified === true ? "Yes" : "No",
+            lastLogin: this.lastLogin
+        }
+    }
+
+    get toJson2() {
+        return {
+            name: this.name,
+            email: this.email,
+            password: "****",
+            isVerified: this.isVerified,
             lastLogin: this.lastLogin
         }
     }
